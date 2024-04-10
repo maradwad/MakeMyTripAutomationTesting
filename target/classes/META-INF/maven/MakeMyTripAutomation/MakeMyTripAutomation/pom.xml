@@ -46,7 +46,7 @@
 					<version>2.22.1</version>
 					<configuration>
 						<includes>
-							<include>Booking.java</include>
+							<include>HomePage.java</include>
 						</includes>
 					</configuration>
 				</plugin>

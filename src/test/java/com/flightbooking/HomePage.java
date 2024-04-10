@@ -88,7 +88,7 @@ public class HomePage {
 		datepicker.click();
 
 		// Choose fare type
-		WebElement fareType = driver.findElement(By.xpath("//ul[@class=\"specialFareNew\"]/li[1]"));
+		WebElement fareType = driver.findElement(By.xpath("//div[@class=\"fareCardItem \"][1]"));
 		fareType.click();
 
 		// click on search button
