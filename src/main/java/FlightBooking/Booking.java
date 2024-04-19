@@ -104,7 +104,7 @@ public class Booking {
 		
 
 		//Choose fare type
-		WebElement fareType=driver.findElement(By.xpath("//div[@class=\"fareCardItem \"][1]"));
+		WebElement fareType=driver.findElement(By.xpath("//div[@class=\"fareCardItem \"][2]"));
 		fareType.click();
 		
 		//click on search button

@@ -1,10 +1,15 @@
 package com.flightbooking;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -34,15 +39,18 @@ public class HomePage {
 	@Test(dataProvider = "data")
 	public void searchFilght(String fromCity, String toCity) throws InterruptedException {
 		// driver switch to iframe
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		WebElement frame = driver
-				.findElement(By.xpath("//iframe[@id=\"webklipper-publisher-widget-container-notification-frame\"]"));
-		driver.switchTo().frame(frame);
-		WebElement closeframe = driver
-				.findElement(By.xpath("//div[@id=\"webklipper-publisher-widget-container-notification-container\"]/a"));
-		closeframe.click();
-		driver.switchTo().defaultContent();
+//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//		WebElement frame = driver
+//				.findElement(By.xpath("//iframe[@id=\"webklipper-publisher-widget-container-notification-frame\"]"));
+//		driver.switchTo().frame(frame);
+//		WebElement closeframe = driver
+//				.findElement(By.xpath("//div[@id=\"webklipper-publisher-widget-container-notification-container\"]/a"));
+//		closeframe.click();
+//		driver.switchTo().defaultContent();
 
+		
+		
+		
 		// select city for the flight search
 		WebElement fromlabel = driver
 				.findElement(By.xpath("//div[@class=\"flt_fsw_inputBox searchCity inactiveWidget \"]/label"));
@@ -95,7 +103,20 @@ public class HomePage {
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 		WebElement search = driver.findElement(By.xpath("//p[@class=\"makeFlex vrtlCenter \"]/a"));
 		search.click();
-
+		
+		//take screenshot and save to file
+		TakesScreenshot scrshot=(TakesScreenshot)driver;
+		File screenshotFile=scrshot.getScreenshotAs(OutputType.FILE);
+		
+		//save scrshot to specific location
+		try {
+			FileUtils.copyFile(screenshotFile, new File("scrn.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	@DataProvider(name = "data")
