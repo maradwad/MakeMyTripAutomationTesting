@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.flightbooking.HomePage">
+      <class name="com.booking.flightBooking">
         <methods>
-          <include name="searchFilght" invocation-numbers="0"/>
+          <include name="searchFilght"/>
           <include name="closeBrowser"/>
           <include name="chromeSetup"/>
         </methods>
-      </class> <!-- com.flightbooking.HomePage -->
+      </class> <!-- com.booking.flightBooking -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

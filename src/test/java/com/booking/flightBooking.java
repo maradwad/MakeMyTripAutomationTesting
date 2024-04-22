@@ -1,4 +1,4 @@
-package com.flightbooking;
+package com.booking;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -16,13 +16,14 @@ import org.testng.annotations.Test;
 
 import com.utility.dateUtility;
 
-public class HomePage {
+public class flightBooking{
 	public JavascriptExecutor js;
 	WebDriver driver;
 
 	@BeforeTest
 	public void chromeSetup() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\target\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "target\\chromedriver.exe");
+		System.out.println(System.getProperty("user.dir") + "\\target\\chromedriver.exe");
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(option);
@@ -34,14 +35,16 @@ public class HomePage {
 	@Test(dataProvider = "data")
 	public void searchFilght(String fromCity, String toCity) throws InterruptedException {
 		// driver switch to iframe
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		WebElement frame = driver
-				.findElement(By.xpath("//iframe[@id=\"webklipper-publisher-widget-container-notification-frame\"]"));
-		driver.switchTo().frame(frame);
-		WebElement closeframe = driver
-				.findElement(By.xpath("//div[@id=\"webklipper-publisher-widget-container-notification-container\"]/a"));
-		closeframe.click();
-		driver.switchTo().defaultContent();
+//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//		WebElement frame = driver
+//				.findElement(By.xpath("//iframe[@id=\"webklipper-publisher-widget-container-notification-frame\"]"));
+//		driver.switchTo().frame(frame);
+//		WebElement closeframe = driver
+//				.findElement(By.xpath("//div[@id=\"webklipper-publisher-widget-container-notification-container\"]/a"));
+//		closeframe.click();
+//		driver.switchTo().defaultContent();
+		
+		driver.findElement(By.xpath("//div[@class=\"imageSlideContainer\"]//span[@class=\"commonModal__close\"]")).click();
 
 		// select city for the flight search
 		WebElement fromlabel = driver
@@ -88,8 +91,8 @@ public class HomePage {
 		datepicker.click();
 
 		// Choose fare type
-		WebElement fareType = driver.findElement(By.xpath("//ul[@class=\"specialFareNew\"]/li[1]"));
-		fareType.click();
+//		WebElement fareType = driver.findElement(By.xpath("//ul[@class=\"specialFareNew\"]/li[1]"));
+//		fareType.click();
 
 		// click on search button
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
