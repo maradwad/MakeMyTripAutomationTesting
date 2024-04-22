@@ -48,11 +48,8 @@ public class flightBooking{
 //				.findElement(By.xpath("//div[@id=\"webklipper-publisher-widget-container-notification-container\"]/a"));
 //		closeframe.click();
 //		driver.switchTo().defaultContent();
-<<<<<<< HEAD:src/test/java/com/booking/flightBooking.java
-		
+	
 		driver.findElement(By.xpath("//div[@class=\"imageSlideContainer\"]//span[@class=\"commonModal__close\"]")).click();
-=======
->>>>>>> 5eb011be945fd72d9b0946b2ab4268adbbe3177f:src/test/java/com/flightbooking/HomePage.java
 
 		
 		
