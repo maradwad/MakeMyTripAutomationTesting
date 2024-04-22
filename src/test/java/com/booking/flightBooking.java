@@ -1,10 +1,15 @@
 package com.booking;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -43,9 +48,15 @@ public class flightBooking{
 //				.findElement(By.xpath("//div[@id=\"webklipper-publisher-widget-container-notification-container\"]/a"));
 //		closeframe.click();
 //		driver.switchTo().defaultContent();
+<<<<<<< HEAD:src/test/java/com/booking/flightBooking.java
 		
 		driver.findElement(By.xpath("//div[@class=\"imageSlideContainer\"]//span[@class=\"commonModal__close\"]")).click();
+=======
+>>>>>>> 5eb011be945fd72d9b0946b2ab4268adbbe3177f:src/test/java/com/flightbooking/HomePage.java
 
+		
+		
+		
 		// select city for the flight search
 		WebElement fromlabel = driver
 				.findElement(By.xpath("//div[@class=\"flt_fsw_inputBox searchCity inactiveWidget \"]/label"));
@@ -91,14 +102,32 @@ public class flightBooking{
 		datepicker.click();
 
 		// Choose fare type
+<<<<<<< HEAD:src/test/java/com/booking/flightBooking.java
 //		WebElement fareType = driver.findElement(By.xpath("//ul[@class=\"specialFareNew\"]/li[1]"));
 //		fareType.click();
+=======
+		WebElement fareType = driver.findElement(By.xpath("//div[@class=\"fareCardItem \"][1]"));
+		fareType.click();
+>>>>>>> 5eb011be945fd72d9b0946b2ab4268adbbe3177f:src/test/java/com/flightbooking/HomePage.java
 
 		// click on search button
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 		WebElement search = driver.findElement(By.xpath("//p[@class=\"makeFlex vrtlCenter \"]/a"));
 		search.click();
-
+		
+		//take screenshot and save to file
+		TakesScreenshot scrshot=(TakesScreenshot)driver;
+		File screenshotFile=scrshot.getScreenshotAs(OutputType.FILE);
+		
+		//save scrshot to specific location
+		try {
+			FileUtils.copyFile(screenshotFile, new File("scrn.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	@DataProvider(name = "data")

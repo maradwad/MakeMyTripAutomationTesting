@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: com.flightbooking.HomePage
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 23.645 s <<< FAILURE! - in com.flightbooking.HomePage
+searchFilght(com.flightbooking.HomePage)  Time elapsed: 5.303 s  <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <label for="fromCity">...</label> is not clickable at point (170, 283). Other element would receive the click: <iframe title="notification-frame-1730545c0" name="notification-frame-1730545c0" id="webklipper-publisher-widget-container-notification-frame" frameborder="0" marginheight="0" marginwidth="0" style="display: block; position: fixed; z-index: 16776272; left: -1000px; top: -1000px; visibility: visible; height: 100%; width: 100%; transform: translate(1000px, 1000px);" data-notification-layout-id="~184fc0b7" data-notification-layout-name="modal" cd_frame_id_="faa07c77bc12a8f46d02176e5773d463"></iframe>
+  (Session info: chrome=123.0.6312.88)
+Build info: version: '4.1.1', revision: 'e8fcc2cecf'
+System info: host: 'LIN51014064', ip: '10.102.145.216', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fc1a6a06f41544a757e856b7486be256, clickElement {id=f.A89BD88B0AFB472EEA710D054BA8B00F.d.6D045790C45E76B431B7BA397D21B18E.e.46}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.88, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54794}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54794/devtoo..., se:cdpVersion: 123.0.6312.88, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (fc1a6a06f41544a757e856b7486be256)] -> xpath: //div[@class="flt_fsw_inputBox searchCity inactiveWidget "]/label]
+Session ID: fc1a6a06f41544a757e856b7486be256
+	at com.flightbooking.HomePage.searchFilght(HomePage.java:49)
+

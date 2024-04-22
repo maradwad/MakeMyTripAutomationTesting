@@ -35,7 +35,7 @@ public class Booking {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\target\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\chromedriver.exe");
 		ChromeOptions option=new ChromeOptions();
 		option.addArguments("--remote-allow-origins=*");
 		driver=new ChromeDriver(option);
@@ -104,7 +104,7 @@ public class Booking {
 		
 
 		//Choose fare type
-		WebElement fareType=driver.findElement(By.xpath("//ul[@class=\"specialFareNew\"]/li[1]"));
+		WebElement fareType=driver.findElement(By.xpath("//div[@class=\"fareCardItem \"][2]"));
 		fareType.click();
 		
 		//click on search button
