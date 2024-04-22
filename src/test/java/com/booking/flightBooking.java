@@ -99,13 +99,9 @@ public class flightBooking{
 		datepicker.click();
 
 		// Choose fare type
-<<<<<<< HEAD:src/test/java/com/booking/flightBooking.java
-//		WebElement fareType = driver.findElement(By.xpath("//ul[@class=\"specialFareNew\"]/li[1]"));
-//		fareType.click();
-=======
 		WebElement fareType = driver.findElement(By.xpath("//div[@class=\"fareCardItem \"][1]"));
 		fareType.click();
->>>>>>> 5eb011be945fd72d9b0946b2ab4268adbbe3177f:src/test/java/com/flightbooking/HomePage.java
+		
 
 		// click on search button
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
