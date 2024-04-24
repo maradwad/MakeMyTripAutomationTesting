@@ -5,7 +5,7 @@
     <classes>
       <class name="com.booking.flightBooking">
         <methods>
-          <include name="searchFilght"/>
+          <include name="searchFilght" invocation-numbers="0"/>
           <include name="closeBrowser"/>
           <include name="chromeSetup"/>
         </methods>

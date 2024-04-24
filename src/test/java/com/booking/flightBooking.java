@@ -27,7 +27,7 @@ public class flightBooking{
 
 	@BeforeTest
 	public void chromeSetup() {
-		System.setProperty("webdriver.chrome.driver", "target\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\chromedriver.exe");
 		System.out.println(System.getProperty("user.dir") + "\\target\\chromedriver.exe");
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--remote-allow-origins=*");
