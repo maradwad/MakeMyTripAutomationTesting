@@ -39,15 +39,15 @@ public class flightBooking{
 
 	@Test(dataProvider = "data")
 	public void searchFilght(String fromCity, String toCity) throws InterruptedException {
-		// driver switch to iframe
-//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//		WebElement frame = driver
-//				.findElement(By.xpath("//iframe[@id=\"webklipper-publisher-widget-container-notification-frame\"]"));
-//		driver.switchTo().frame(frame);
-//		WebElement closeframe = driver
-//				.findElement(By.xpath("//div[@id=\"webklipper-publisher-widget-container-notification-container\"]/a"));
-//		closeframe.click();
-//		driver.switchTo().defaultContent();
+//		 driver switch to iframe
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		WebElement frame = driver
+				.findElement(By.xpath("//iframe[@id=\"webklipper-publisher-widget-container-notification-frame\"]"));
+		driver.switchTo().frame(frame);
+		WebElement closeframe = driver
+				.findElement(By.xpath("//div[@id=\"webklipper-publisher-widget-container-notification-container\"]/a"));
+		closeframe.click();
+		driver.switchTo().defaultContent();
 	
 		driver.findElement(By.xpath("//div[@class=\"imageSlideContainer\"]//span[@class=\"commonModal__close\"]")).click();
 
