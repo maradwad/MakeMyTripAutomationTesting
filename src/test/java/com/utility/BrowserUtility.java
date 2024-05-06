@@ -15,8 +15,9 @@ import io.netty.util.Timeout;
 public class BrowserUtility {
 	public WebDriver driver;
 	WebDriverWait wait;
-	public hotelBookingPage hotel;
+	public static hotelBookingPage hotel;
 	JavascriptExecutor js;
+	public static ExcelUtility excel;
 
 	@BeforeMethod
 	public void chromeSetup()
@@ -31,6 +32,7 @@ public class BrowserUtility {
 		wait=new WebDriverWait(driver, 20);
 		js=(JavascriptExecutor)driver;
 		hotel=new hotelBookingPage(driver, wait,js);
+		excel=new ExcelUtility();
 	}
 	
 	@AfterMethod

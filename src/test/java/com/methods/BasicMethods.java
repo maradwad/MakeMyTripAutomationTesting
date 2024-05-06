@@ -1,5 +1,8 @@
 package com.methods;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -38,7 +41,7 @@ public class BasicMethods {
 	}
 	public void click(By locator)
 	{
-		element(locator).click();
+		 wait.until(ExpectedConditions.elementToBeClickable(element(locator))).click();
 	}	
 	public void SwitchtoFrame(By locator)
 	{
@@ -50,7 +53,7 @@ public class BasicMethods {
 	}
 	public void sendkeys(By loactor,String string)
 	{
-		element(loactor).sendKeys(string);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(loactor)).sendKeys(string);
 	}
 	public void selectFromList(By locator,String string) throws InterruptedException
 	{
@@ -67,6 +70,34 @@ public class BasicMethods {
 	}
 	public void scrollBy()
 	{
-		js.executeScript("window.scrollBy(0,100)");
+		js.executeScript("window.scrollBy(0,200)");
+	}
+	public String getdata(By locator)
+	{
+		return element(locator).getText();
+	}
+	public String dateUtility(int day)
+	{
+		Date date=new Date();
+		LocalDate ldate=LocalDate.now();
+		int daydiff=day-date.getDay();
+		if(date.getDay()<=0)
+		{
+			daydiff=+7;
+		}
+		ldate=ldate.plusDays(daydiff);
+		DateTimeFormatter dateformat=DateTimeFormatter.ofPattern("E MMM dd yyyy");
+		String strdate=ldate.format(dateformat);
+		return strdate;
+		
+		
+		
+	}
+	public List<WebElement> listOfWebelement(By locator) throws Exception
+	{
+		Thread.sleep(6000);
+		List<WebElement> list=driver.findElements(locator);
+		return list;
+		
 	}
 }
