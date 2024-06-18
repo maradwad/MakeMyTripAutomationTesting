@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.booking.tests.HotelBookingTests">
+      <class name="com.booking.tests.holidayPackageTests">
         <methods>
           <include name="chromeSetup"/>
-          <include name="hotelbooking"/>
           <include name="closeBrowser"/>
+          <include name="holidayPackageTesting"/>
         </methods>
-      </class> <!-- com.booking.tests.HotelBookingTests -->
+      </class> <!-- com.booking.tests.holidayPackageTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

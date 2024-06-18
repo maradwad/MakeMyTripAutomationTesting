@@ -50,7 +50,6 @@ public class flightBooking{
 		driver.switchTo().defaultContent();
 	
 		driver.findElement(By.xpath("//div[@class=\"imageSlideContainer\"]//span[@class=\"commonModal__close\"]")).click();
-
 		
 		
 		

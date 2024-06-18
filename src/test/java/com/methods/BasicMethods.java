@@ -88,16 +88,12 @@ public class BasicMethods {
 		ldate=ldate.plusDays(daydiff);
 		DateTimeFormatter dateformat=DateTimeFormatter.ofPattern("E MMM dd yyyy");
 		String strdate=ldate.format(dateformat);
-		return strdate;
-		
-		
-		
+		return strdate;		
 	}
 	public List<WebElement> listOfWebelement(By locator) throws Exception
 	{
 		Thread.sleep(6000);
 		List<WebElement> list=driver.findElements(locator);
-		return list;
-		
+		return list;		
 	}
 }

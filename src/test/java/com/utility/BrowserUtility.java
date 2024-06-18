@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.booking.holidayPackagePage;
 import com.booking.hotelBookingPage;
 
 import io.netty.util.Timeout;
@@ -16,6 +17,7 @@ public class BrowserUtility {
 	public WebDriver driver;
 	WebDriverWait wait;
 	public static hotelBookingPage hotel;
+	public static holidayPackagePage holidaypackage;
 	JavascriptExecutor js;
 	public static ExcelUtility excel;
 
@@ -32,6 +34,7 @@ public class BrowserUtility {
 		wait=new WebDriverWait(driver, 20);
 		js=(JavascriptExecutor)driver;
 		hotel=new hotelBookingPage(driver, wait,js);
+		holidaypackage = new holidayPackagePage(driver, wait, js);
 		excel=new ExcelUtility();
 	}
 	
